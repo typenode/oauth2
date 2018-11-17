@@ -26,8 +26,8 @@ Library is in development.
         }
         
         async getClient(clientId: string, clientSecret: string): Promise<OAuthClientContract> {
-             //fetch user
-                return null;
+             //fetch client
+             return null;
         }
     
         async validateScope(user, client: OAuthClientContract, scope): Promise<boolean> {
