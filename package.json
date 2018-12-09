@@ -1,9 +1,21 @@
 {
    "name": "@typenode/oauth2",
-   "version": "1.0.0-dev",
+   "version": "1.1.0-dev",
    "description": "OAuth2 authentication",
    "main": "lib/index.js",
    "types": "lib/index.d.ts",
+   "keywords": [
+      "oauth",
+      "oauth2",
+      "passport"
+   ],
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/typenode/oauth2.git"
+   },
+   "bugs": {
+      "url": "https://github.com/typenode/oauth2/issues"
+   },
    "directories": {
       "lib": "lib"
    },
@@ -16,11 +28,11 @@
    "license": "MIT",
    "devDependencies": {
       "ts-node": "3.3.0",
-      "typescript": "^3.1.6"
+      "typescript": "^3.1.6",
+      "@types/node": "^10.12.5"
    },
    "dependencies": {
       "@types/jsonwebtoken": "^8.3.0",
-      "@types/node": "^10.12.5",
       "jsonwebtoken": "^8.4.0",
       "reflect-metadata": "^0.1.10"
    }

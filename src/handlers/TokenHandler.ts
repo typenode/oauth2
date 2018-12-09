@@ -53,7 +53,7 @@ export class TokenHandler<M extends Model> implements TokenHandlerOptions{
             const data = await this.handleGrantType(request, client);
             const model = new TokenModel({...data, ...{allowExtendedTokenAttributes: this.allowExtendedTokenAttributes}});
             const tokenType = this.getTokenType(model);
-            const body = tokenType.valueOf();
+            const body = this.model.valueOf(tokenType,model.client,model.user);
             this.updateSuccessResponse(response, body);
             return body;
         }catch (e) {

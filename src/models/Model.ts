@@ -3,6 +3,7 @@ import {TokenContract}       from "../contract/TokenContract";
 import {OAuthClientContract} from "../contract/OAuthClientContract";
 import {OAuthCodeContract}   from "../contract/OAuthCodeContract";
 import {AbstractGrantType}   from "../grants/AbstractGrantType";
+import {BearerToken}         from "..";
 
 export abstract class Model {
     abstract async getAccessToken(bearerToken:string):Promise<TokenContract>;
@@ -32,4 +33,9 @@ export abstract class Model {
     async generateAuthorizationCode<G extends AbstractGrantType>(client,user,scope){
         return await this.generateRandomToken();
     }
+
+    valueOf(token:BearerToken,client:OAuthClientContract, user){
+        return token.valueOf();
+    }
+
 }
